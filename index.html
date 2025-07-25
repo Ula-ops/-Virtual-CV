@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ulrich Bester | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-pap6aVp1qazr9zTL2nVPr1D6/2X+AfD9O3m52V1Tv0yrdPxF2D59t2h10Oj+WmHfLG9Nje6T1Z1LRvT3f5Yn9w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <div class="logo">Ulrich Bester</div>
+      <button id="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link active">About Me</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- About Me -->
+    <section id="about" class="section active">
+      <h2><i class="fas fa-user-circle"></i> About Me</h2>
+      <div class="about-content">
+        <img src="profile.jpeg" alt="Ulrich Bester" class="about-img" />
+        <p>
+          I am an Information Technology student currently studying at North-West University,
+          with a strong passion for building a career in software development.
+          My academic journey has introduced me to various areas of IT, but I’ve developed a particular interest in programming,
+          problem-solving, and creating digital solutions that improve user experiences.
+          I have hands-on experience with programming languages such as Python, C++, C#, and Java,
+          and I am continuously seeking opportunities to grow my technical skill set.
+          I enjoy collaborating with others as well as working independently,
+          and I am motivated by the challenge of turning complex problems into practical,
+          real-world applications.
+        </p>
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="section">
+      <h2><i class="fas fa-file-alt"></i> Resume</h2>
+      <p><strong>Education:</strong></p>
+      <ul>
+        <li><i class="fas fa-graduation-cap"></i> BSc Information Technology – North-West University (2023 - Present)</li>
+        <li><i class="fas fa-school"></i> Hoërskool Driehoek (2018 - 2022) —
+          <a href="IMG_20250625_0001.pdf" download>View Report (PDF)</a>
+        </li>
+      </ul>
+      <p><strong>Languages:</strong> English, Afrikaans</p>
+      <p>
+        <a href="Grey Modern Professional CV Resume.pdf" target="_blank" rel="noopener" class="btn">
+          <i class="fas fa-download"></i> Download My CV (PDF)
+        </a>
+      </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+      <h2><i class="fas fa-code"></i> Projects</h2>
+      <div class="project-list">
+        <article class="project-item">
+          <h3>Marks Viewing System</h3>
+          <p>A role-based system with Student, Teacher, and Admin login. Built in Java.</p>
+        </article>
+        <article class="project-item">
+          <h3>Animal Adoption Website</h3>
+          <p>Spring Boot web platform with Postman API testing.</p>
+        </article>
+        <article class="project-item">
+          <h3>Office Network Simulation</h3>
+          <p>Network setup using VLANs, routers, and dynamic routing.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <h2><i class="fas fa-lightbulb"></i> Skills</h2>
+      <ul class="skills-grid">
+        <li><i class="fab fa-java"></i> Java</li>
+        <li><i class="fab fa-python"></i> Python</li>
+        <li><i class="fas fa-code"></i> Web Development</li>
+        <li><i class="fas fa-database"></i> Database Design & Development</li>
+        <li><i class="fas fa-network-wired"></i> Networking & Cybersecurity</li>
+        <li><i class="fas fa-users"></i> Teamwork & Communication</li>
+        <li><i class="fas fa-brain"></i> Problem Solving & Critical Thinking</li>
+      </ul>
+    </section>
+
+    <!-- Contact (Clean version) -->
+    <section id="contact" class="section">
+      <h2><i class="fas fa-address-book"></i> Contact</h2>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> <a href="mailto:uli.bester@gmail.com">uli.bester@gmail.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+27836595673">083 659 5673</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> 93 Mark Twain St., Vanderbijlpark</p>
+        <p><i class="fab fa-github"></i> <a href="https://github.com/Ula-ops" target="_blank">github.com/Ula-ops</a></p>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ulrich Bester</p>
+  </footer>
+  <!-- new -->
+  <!-- Script -->
+  <script>
+    // Navigation logic
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+        const id = this.getAttribute('href').substring(1);
+        document.getElementById(id).classList.add('active');
+
+        document.querySelector('.nav-links').classList.remove('show');
+        document.getElementById('menu-toggle').setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Mobile nav toggle
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      const navLinks = document.querySelector('.nav-links');
+      const isOpen = navLinks.classList.toggle('show');
+      document.getElementById('menu-toggle').setAttribute('aria-expanded', isOpen.toString());
+    });
+  </script>
+
+</body>
+</html>
